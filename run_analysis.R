@@ -42,4 +42,4 @@ setnames(all, colnames(all), tolower(gsub("[.]", "", colnames(all))))
 
 # now group this data by subject and activity and then calculate the mean for all columns of these groups
 uciharsummary <- summarise_each(group_by(all, subject, activity), funs(mean))
-write.csv(uciharsummary, file="uciharsummary.csv", row.names=FALSE)
+write.table(uciharsummary, file="uciharsummary.csv", row.names=FALSE)
